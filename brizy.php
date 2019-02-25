@@ -29,6 +29,7 @@ define( 'BRIZY_PLUGIN_URL', rtrim( plugin_dir_url( BRIZY_FILE ), "/" ) );
 define( 'BRIZY_MAX_REVISIONS_TO_KEEP', 100 );
 
 include_once rtrim( BRIZY_PLUGIN_PATH, "/" ) . '/autoload.php';
+include_once "./languages/main.php";
 
 
 add_action( 'plugins_loaded', 'brizy_load' );
@@ -53,8 +54,9 @@ function brizy_notices() {
 	?>
     <div class="notice notice-error is-dismissible">
         <p>
-            Brizy requires PHP version 5.4+, you currently running PHP <?php echo PHP_VERSION ?>.
-            <b>BRIZY IS NOT RUNNING. </b>
+			<?php echo __b( 'brziy', 'Brizy' ) ?> requires PHP version 5.4+, you currently running
+            PHP <?php echo PHP_VERSION ?>.
+            <b><?php echo strtoupper( __b( 'brziy', 'Brizy' ) ) ?> IS NOT RUNNING. </b>
         </p>
     </div>
 	<?php
